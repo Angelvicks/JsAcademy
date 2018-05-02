@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task</title>
+</head>
+<body>
+  Assignment 3 <br>
+   Open the console => ctrl + shift + i
+</body>
+<script type="text/javascript">
+  function factorial(n) {
+  if (n === 0) {
+    return 1;
+  }
+  
+  return n * factorial(n - 1);  //Here's the recursion
+}
+
+
+var n=prompt("Enter the value:");  // Enter any value
+
+console.log(factorial(n));
+
+// full christmass tree
+
+var txt = "";
+for(i=1;i<=10;i++){
+  txt = "";
+  for(j=i;j<10;j++){
+    txt += " ";
+  }
+  for(k=0;k<(i*2)-1;k++){
+    txt += "#";
+  }
+  console.log(txt);
+}
+
+// chessboard using recursion
+
+function constructBoard(size) {
+  var ret = '';
+      
+  function constructLine(oddOrEven, index, size, base) {
+ 
+    index % 2 === oddOrEven ? base += '#' : base += ' ';
+             
+    if (++index > size) {       
+      return base += '\n';
+    } else {            
+      return constructLine(oddOrEven, index, size, base);
+    }
+  }
+  
+  for (var i = 1; i <= size; i++) {   
+    ret += constructLine(i % 2, 1, size, '');             
+  }
+          
+  return ret;
+}
+
+console.log(constructBoard('16'));
+
+</script>
+</html>
